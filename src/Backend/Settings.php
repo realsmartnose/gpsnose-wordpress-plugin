@@ -15,7 +15,26 @@ class Settings
 	 */
 	public function __construct()
 	{
+	}
+
+	/**
+	 * Add the admin-menu
+	 *
+	 * @return void
+	 */
+	public function admin_menu()
+	{
 		add_action('admin_init', [$this, 'admin_init']);
+		add_action('admin_menu', function () {
+			add_submenu_page(
+				'options-general.php',
+				'GpsNose Options',
+				'GpsNose Options',
+				'manage_options',
+				'GpsNose',
+				[$this, 'gpsnose_options_page_html']
+			);
+		});
 	}
 
 	/**
@@ -36,17 +55,6 @@ class Settings
 		);
 
 		add_settings_field(
-			'gpsnose_mashup_name',
-			'Mashup name',
-			[$this, 'field_input'],
-			'gpsnose',
-			'gpsnose_section_mashup',
-			[
-				'label_for' => 'gpsnose_mashup_name'
-			],
-		);
-
-		add_settings_field(
 			'gpsnose_validation_key',
 			'Validation-Key',
 			[$this, 'field_input'],
@@ -54,6 +62,17 @@ class Settings
 			'gpsnose_section_mashup',
 			[
 				'label_for' => 'gpsnose_validation_key'
+			],
+		);
+
+		add_settings_field(
+			'gpsnose_mashup_name',
+			'Mashup name',
+			[$this, 'field_input'],
+			'gpsnose',
+			'gpsnose_section_mashup',
+			[
+				'label_for' => 'gpsnose_mashup_name'
 			],
 		);
 
@@ -104,6 +123,29 @@ class Settings
 	}
 
 	/**
+	 * Options page for gpsnose
+	 */
+	public function gpsnose_options_page_html()
+	{
+		// check user capabilities
+		if (!current_user_can('manage_options')) {
+			return;
+		}
+?>
+		<div class="wrap">
+			<h1><?php echo esc_html(get_admin_page_title()); ?></h1>
+			<form action="options.php" method="post">
+				<?php
+				settings_fields('gpsnose');
+				do_settings_sections('gpsnose');
+				submit_button(__('Save Settings', 'textdomain'));
+				?>
+			</form>
+		</div>
+<?php
+	}
+
+	/**
 	 * Returns a input-field
 	 *
 	 * @param array $args
@@ -113,7 +155,7 @@ class Settings
 	{
 		$fieldName = $args['label_for'];
 		$placeholder = $args['placeholder'];
-		$value = $this->get_value_for_option($fieldName);
+		$value = Settings::get_value_for_option($fieldName);
 		echo "<input id=\"{$fieldName}\" name=\"gpsnose_options[{$fieldName}]\" size=\"40\" type=\"text\" value=\"{$value}\" placeholder=\"{$placeholder}\" />";
 	}
 
@@ -123,7 +165,7 @@ class Settings
 	 * @param string $fieldName
 	 * @return string|null
 	 */
-	public function get_value_for_option(string $fieldName): ?string
+	public static function get_value_for_option(string $fieldName): ?string
 	{
 		$options = get_option('gpsnose_options');
 		if (isset($options[$fieldName])) {

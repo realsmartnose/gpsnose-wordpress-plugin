@@ -12,53 +12,14 @@
 require "vendor/autoload.php";
 
 use SmartNoses\Gpsnose\Backend\Settings;
+use SmartNoses\Gpsnose\Frontend\Header;
 
 $settings = new Settings('gpsnose');
+$settings->admin_menu();
 
-// Add the Options-Page to the backend
-add_action('admin_menu', function () {
-	add_submenu_page(
-		'tools.php',
-		'GpsNose Options',
-		'GpsNose Options',
-		'manage_options',
-		'GpsNose',
-		'gpsnose_options_page_html'
-	);
-});
+$header = new Header();
+$header->set_meta();
 
-/**
- * Options page for gpsnose
- */
-function gpsnose_options_page_html()
-{
-	// check user capabilities
-	if (!current_user_can('manage_options')) {
-		return;
-	}
-?>
-	<div class="wrap">
-		<h1><?php echo esc_html(get_admin_page_title()); ?></h1>
-		<form action="options.php" method="post">
-			<?php
-			settings_fields('gpsnose');
-			do_settings_sections('gpsnose');
-			submit_button(__('Save Settings', 'textdomain'));
-			?>
-		</form>
-	</div>
-	<?php
-}
-
-// Add meat-tag to header
-add_action('wp_head', function () use ($settings) {
-	$gpsnose_validation_key = $settings->get_value_for_option('gpsnose_validation_key');
-	if ($gpsnose_validation_key) {
-	?>
-		<meta name="gpsnose-validation-key" content="<?php echo $gpsnose_validation_key ?>" />
-<?php
-	}
-});
 
 /*
 $debug_tags = [];
