@@ -1,0 +1,19 @@
+{
+    "name": "smartnoses/gpsnosewp",
+    "type": "wordpress-plugin",
+    "description": "Extension to integrate GpsNose into WordPress - GpsNose connects anonymous people to the real world using the web and mobiles",
+    "authors": [
+        {
+            "name": "Juergen Furrer",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+		"smartnoses/gpsnosesdk": "1.1.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "SmartNoses\\Gpsnose\\" : "src/"
+        }
+    }
+}
