@@ -1,0 +1,68 @@
+1.2.0
+- UPD: Update template
+
+1.1.4
+- UPD: Update template
+
+1.1.3
+- UPD: Update template
+
+1.1.2
+- UPD: Add app-type and tour-linked-items
+
+1.1.1
+- UPD: Add image for tours
+
+1.1.0
+- UPD: Update to Bootstrap V5
+
+1.0.15
+- FIX: Fix community-button for Bootstrap-V4.4.x
+- UPD: Add knockout 3.5.1
+- UPD: Remove old libs
+
+1.0.14
+- FIX: Fix template version
+
+1.0.13
+- UPD: Add ThumbUrl to KO-DTOs
+
+1.0.12
+- UPD: Update template version
+
+1.0.11
+- UPD: Fix News-Template
+
+1.0.10
+- ADD: Add support for Bootstrap
+
+1.0.9
+- FIX: Fix templates
+
+1.0.8
+- FIX: Fix member-template
+
+1.0.7
+- CHA: Change the coding-style
+
+1.0.6
+- ADD: Distance to Nearby
+
+1.0.5
+- ADD: gn_data.Community.QrCodeJoinImage
+- CHA: Use gn_data.Community in News-Template
+
+1.0.4
+- CHA: Small template change
+
+1.0.3
+- CHA: Ref Nearby
+
+1.0.2
+- ADD: gn_data.Settings.NearbyNosesPageSize and gn_data.Settings.NearbyNosesPageUrl to Nearby/Noses.html
+
+1.0.1
+- ADD: gn_data.Settings.LoginId to detail-url
+
+1.0.0
+- ADD: Initial Release
