@@ -83,57 +83,56 @@ class Gpsnose_Public
         $options = get_option($this->plugin_name);
 
         if (isset($options['load-js-jquery']) && $options['load-js-jquery']) {
-            wp_enqueue_script($this->plugin_name . '0', plugin_dir_url(__FILE__) . 'Mashup/Libs/jquery/jquery.min.js', array(), $this->version, false);
+            wp_enqueue_script($this->plugin_name . '-jquery', plugin_dir_url(__FILE__) . 'Mashup/Libs/jquery/jquery.min.js', array(), $this->version, false);
         }
 
 		if (isset($options['load-js-bootstrap']) && $options['load-js-bootstrap']) {
-            wp_enqueue_script($this->plugin_name . '0', plugin_dir_url(__FILE__) . 'Mashup/Libs/bootstrap/js/bootstrap.min.js', array(), $this->version, false);
+            wp_enqueue_script($this->plugin_name . '-bootstrap', plugin_dir_url(__FILE__) . 'Mashup/Libs/bootstrap/js/bootstrap.min.js', array(), $this->version, false);
         }
 
         if (isset($options['load-js-language']) && $options['load-js-language']) {
-            wp_enqueue_script($this->plugin_name . '1', plugin_dir_url(__FILE__) . 'Mashup/Language/en.js', array(), $this->version, false);
+            wp_enqueue_script($this->plugin_name . '-language', plugin_dir_url(__FILE__) . 'Mashup/Language/en.js', array(), $this->version, false);
         }
 
         if (isset($options['load-js-bignumber']) && $options['load-js-bignumber']) {
-            wp_enqueue_script($this->plugin_name . '2', plugin_dir_url(__FILE__) . 'Mashup/Libs/bignumber-rev4/js/bignumber.min.js', array(), $this->version, true);
+            wp_enqueue_script($this->plugin_name . '-bignumber', plugin_dir_url(__FILE__) . 'Mashup/Libs/bignumber-rev4/js/bignumber.min.js', array(), $this->version, true);
         }
 
         if (isset($options['load-js-moment']) && $options['load-js-moment']) {
-            wp_enqueue_script($this->plugin_name . '3', plugin_dir_url(__FILE__) . 'Mashup/Libs/moment/moment.min.js', array(), $this->version, true);
+            wp_enqueue_script($this->plugin_name . '-moment', plugin_dir_url(__FILE__) . 'Mashup/Libs/moment/moment.min.js', array(), $this->version, true);
         }
 
         if (isset($options['load-js-numeral']) && $options['load-js-numeral']) {
-            wp_enqueue_script($this->plugin_name . '4', plugin_dir_url(__FILE__) . 'Mashup/Libs/numeral/numeral.min.js', array(), $this->version, true);
+            wp_enqueue_script($this->plugin_name . '-numeral', plugin_dir_url(__FILE__) . 'Mashup/Libs/numeral/numeral.min.js', array(), $this->version, true);
         }
 
         if (isset($options['load-js-imagesloaded']) && $options['load-js-imagesloaded']) {
-            wp_enqueue_script($this->plugin_name . '5', plugin_dir_url(__FILE__) . 'Mashup/Libs/imagesloaded/imagesloaded.pkgd.min.js', array(
+            wp_enqueue_script($this->plugin_name . '-imagesloaded', plugin_dir_url(__FILE__) . 'Mashup/Libs/imagesloaded/imagesloaded.pkgd.min.js', array(
                 'jquery'
             ), $this->version, true);
         }
 
         if (isset($options['load-js-masonry']) && $options['load-js-masonry']) {
-            wp_enqueue_script($this->plugin_name . '6', plugin_dir_url(__FILE__) . 'Mashup/Libs/masonry-layout/masonry.pkgd.min.js', array(
+            wp_enqueue_script($this->plugin_name . '-masonry', plugin_dir_url(__FILE__) . 'Mashup/Libs/masonry-layout/masonry.pkgd.min.js', array(
                 'jquery'
             ), $this->version, true);
         }
 
         if (isset($options['load-js-knockout']) && $options['load-js-knockout']) {
-            wp_enqueue_script($this->plugin_name . '7', plugin_dir_url(__FILE__) . 'Mashup/Libs/knockout/knockout-latest.js', array(
+            wp_enqueue_script($this->plugin_name . '-knockout', plugin_dir_url(__FILE__) . 'Mashup/Libs/knockout/knockout-latest.js', array(
                 'jquery'
             ), $this->version, true);
         }
-
-        wp_add_inline_script($this->plugin_name . '8', 'var gn_data = {};');
+        wp_add_inline_script($this->plugin_name . '-knockout', 'var gn_data = {};');
 
         if (isset($options['load-js-maframework']) && $options['load-js-maframework']) {
-            wp_enqueue_script($this->plugin_name . '9', plugin_dir_url(__FILE__) . 'Mashup/Js/maframework.min.js', array(
+            wp_enqueue_script($this->plugin_name . '-maframework', plugin_dir_url(__FILE__) . 'Mashup/Js/maframework.min.js', array(
                 'jquery'
             ), $this->version, true);
         }
 
         if (isset($options['load-js-gpsnose-ko']) && $options['load-js-gpsnose-ko']) {
-            wp_enqueue_script($this->plugin_name . '10', plugin_dir_url(__FILE__) . 'Mashup/Js/gpsnose.knockout.js', array(
+            wp_enqueue_script($this->plugin_name . '-gpsnose-ko', plugin_dir_url(__FILE__) . 'Mashup/Js/gpsnose.knockout.js', array(
                 'jquery'
             ), $this->version, true);
         }
