@@ -167,6 +167,7 @@ class Gpsnose_Admin
         $valid['load-css-bootstrap'] = (isset($input['load-css-bootstrap']) && $input['load-css-bootstrap'] ? '1' : '0');
         $valid['load-css-gpsnose'] = (isset($input['load-css-gpsnose']) && $input['load-css-gpsnose'] ? '1' : '0');
 
+        $valid['load-js-jquery'] = (isset($input['load-js-jquery']) && $input['load-js-jquery'] ? '1' : '0');
         $valid['load-js-bootstrap'] = (isset($input['load-js-bootstrap']) && $input['load-js-bootstrap'] ? '1' : '0');
         $valid['load-js-language'] = (isset($input['load-js-language']) && $input['load-js-language'] ? '1' : '0');
 

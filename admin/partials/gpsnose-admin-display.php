@@ -30,6 +30,7 @@
         $checkBoxes['load-css-bootstrap'] = (isset($options['load-css-bootstrap']) ? $options['load-css-bootstrap'] : '1');
         $checkBoxes['load-css-gpsnose'] = (isset($options['load-css-gpsnose']) ? $options['load-css-gpsnose'] : '1');
 
+        $checkBoxes['load-js-jquery'] = (isset($options['load-js-jquery']) ? $options['load-js-jquery'] : '0');
         $checkBoxes['load-js-bootstrap'] = (isset($options['load-js-bootstrap']) ? $options['load-js-bootstrap'] : '1');
         $checkBoxes['load-js-language'] = (isset($options['load-js-language']) ? $options['load-js-language'] : '1');
         $checkBoxes['load-js-bignumber'] = (isset($options['load-js-bignumber']) ? $options['load-js-bignumber'] : '1');
@@ -75,6 +76,12 @@
 
         <h3><?php _e("GpsNose JS", $this->plugin_name)?></h3>
         <fieldset>
+            <legend class="screen-reader-text"><span><?php _e("jQuery", $this->plugin_name)?></span></legend>
+            <label for="<?php echo $this->plugin_name; ?>-load-js-jquery">
+                <input type="checkbox" id="<?php echo $this->plugin_name; ?>-load-js-jquery" name="<?php echo $this->plugin_name; ?>[load-js-jquery]" value="1" <?php checked($checkBoxes['load-js-jquery'])?> />
+                <span><?php esc_attr_e('Load jQuery', $this->plugin_name); ?></span>
+            </label>
+            <br>
             <legend class="screen-reader-text"><span><?php _e("GpsNose JS", $this->plugin_name)?></span></legend>
             <label for="<?php echo $this->plugin_name; ?>-load-js-bootstrap">
                 <input type="checkbox" id="<?php echo $this->plugin_name; ?>-load-js-bootstrap" name="<?php echo $this->plugin_name; ?>[load-js-bootstrap]" value="1" <?php checked($checkBoxes['load-js-bootstrap'])?> />
