@@ -10,10 +10,5 @@
     ],
     "require": {
 		"smartnoses/gpsnosesdk": "1.2.3"
-    },
-    "autoload": {
-        "psr-4": {
-            "SmartNoses\\Gpsnose\\" : "src/"
-        }
     }
 }
