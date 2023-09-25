@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5fdf4ebb7e815e4e1171ad5bf12c19d7",
+    "content-hash": "bd93979823ec3483fd0946d790d11c08",
     "packages": [
         {
             "name": "smartnoses/gpsnosesdk",
-            "version": "v1.1.1",
+            "version": "v1.2.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/realsmartnose/gpsnose-sdk-php.git",
-                "reference": "d78881d7106adeb6caa56c94e044ff0bc5782537"
+                "reference": "4bf58b5e1fca5d8943a81db77447abd703f06d51"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/realsmartnose/gpsnose-sdk-php/zipball/d78881d7106adeb6caa56c94e044ff0bc5782537",
-                "reference": "d78881d7106adeb6caa56c94e044ff0bc5782537",
+                "url": "https://api.github.com/repos/realsmartnose/gpsnose-sdk-php/zipball/4bf58b5e1fca5d8943a81db77447abd703f06d51",
+                "reference": "4bf58b5e1fca5d8943a81db77447abd703f06d51",
                 "shasum": ""
             },
             "require": {
@@ -48,9 +48,9 @@
             ],
             "support": {
                 "issues": "https://github.com/realsmartnose/gpsnose-sdk-php/issues",
-                "source": "https://github.com/realsmartnose/gpsnose-sdk-php/tree/v1.1.1"
+                "source": "https://github.com/realsmartnose/gpsnose-sdk-php/tree/v1.2.3"
             },
-            "time": "2021-10-29T14:41:12+00:00"
+            "time": "2022-10-15T09:09:30+00:00"
         }
     ],
     "packages-dev": [],
