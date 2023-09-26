@@ -9,6 +9,7 @@
         }
     ],
     "require": {
-		"smartnoses/gpsnosesdk": "1.2.3"
+		"smartnoses/gpsnosesdk": "1.2.3",
+		"wp-cli/wp-cli-bundle": "*"
     }
 }

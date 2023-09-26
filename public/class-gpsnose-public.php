@@ -95,7 +95,7 @@ class Gpsnose_Public
         }
 
         if (isset($options['load-js-bignumber']) && $options['load-js-bignumber']) {
-            wp_enqueue_script($this->plugin_name . '-bignumber', plugin_dir_url(__FILE__) . 'Mashup/Libs/bignumber-rev4/js/bignumber.min.js', array(), $this->version, true);
+            wp_enqueue_script($this->plugin_name . '-bignumber', plugin_dir_url(__FILE__) . 'Mashup/Libs/bignumber-rev4/bignumber.min.js', array(), $this->version, true);
         }
 
         if (isset($options['load-js-moment']) && $options['load-js-moment']) {
@@ -123,7 +123,7 @@ class Gpsnose_Public
                 'jquery'
             ), $this->version, true);
         }
-        wp_add_inline_script($this->plugin_name . '-knockout', 'var gn_data = {};');
+        wp_add_inline_script($this->plugin_name . '-knockout', 'var gn_data = {Settings: {}, Community:{Tagname:"%ieslibrary.com"}};');
 
         if (isset($options['load-js-maframework']) && $options['load-js-maframework']) {
             wp_enqueue_script($this->plugin_name . '-maframework', plugin_dir_url(__FILE__) . 'Mashup/Js/maframework.min.js', array(

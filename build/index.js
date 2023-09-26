@@ -54,7 +54,7 @@ __webpack_require__.r(__webpack_exports__);
 function Edit() {
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
     ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)()
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Gutenpride – hello from the editor!', 'gutenpride'));
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('GpsNose Members', 'gutenpride'));
 }
 
 /***/ }),
@@ -148,7 +148,75 @@ __webpack_require__.r(__webpack_exports__);
 function save() {
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
     ..._wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps.save()
-  }, 'Gutenpride – hello from the saved content!');
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    class: "ma-gpsnose",
+    "data-gn-version": "1.2.0"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    id: "ma-gpsnose-1",
+    class: "ma-gpsnose-members",
+    "data-bind": "visible:true",
+    style: "display:none;"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    class: "btn-group btn-group-sm ma-btn-group"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
+    class: "btn btn-default btn-outline-primary",
+    "data-external": true,
+    "data-bind": "html: Entity.DisplayName(), attr: { href: Entity.DetailUrl() }"
+  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
+    href: "javascript:void(0);",
+    class: "btn btn-primary",
+    tabindex: "0",
+    "data-bind": "text: GetLangRes('Common_btnJoinCommunity', 'Join community'), attr: { 'data-popover-img': gn_data.Community.QrCodeJoinImage, 'data-popover-text': GetLangRes('Common_lblScanToJoin', 'To join the community, scan this QR code using your mobile GpsNose app please'), 'data-remove': ! gn_data.Community.QrCodeJoinImage }"
+  })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    class: "row publishers",
+    "data-bind": "foreach: Members"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    class: "masonry-item col-lg-2 col-md-3 col-sm-4 col-xs-6 col-6"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    class: "outer",
+    "data-external": "true",
+    "data-bind": "attr: { 'data-src': $data.NoseDto.DetailUrl() }"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    class: "thumbnail"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
+    "data-bind": "attr: { src: $data.NoseDto.ThumbUrl() }",
+    onerror: "this.src=window.gn_data.Settings.ImagePath+'/EmptyUser.png'"
+  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    "data-bind": "if: $data.IsAdmin"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
+    class: "ma-crown",
+    "data-bind": "attr: { src: window.gn_data.Settings.ImagePath + '/IcActionCrown.png'}"
+  })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    class: "loginname"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    "data-bind": "text: $data.LoginName"
+  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    "data-bind": "text: GetAgeStringFromTicks($data.JoinTicks) + ''"
+  })))))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    class: "text-center"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    class: "btn btn-default btn-outline-secondary btn-lg",
+    "data-bind": "click: function(){ PageMembers() }, visible: HasMoreMembers(), attr: { disabled: MembersRequestActive() }"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    "data-bind": "visible: ! MembersRequestActive()"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("i", {
+    class: "glyphicon glyphicon-cloud-download fas fa-cloud-download-alt"
+  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    "data-bind": "text: ' ' + GetLangRes('Common_lblLoadMore', 'more..')"
+  })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    "data-bind": "visible: MembersRequestActive()"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("i", {
+    class: "glyphicon glyphicon-repeat gly-spin fas fa-redo-alt"
+  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    "data-bind": "text: ' ' + GetLangRes('Common_lblRequestInProgress', 'Loading')"
+  })))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    class: "alert alert-info",
+    "data-bind": "visible: Members().length == 0 && ! MembersRequestActive()"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("i", {
+    class: "glyphicon glyphicon-info-sign fas fa-info-circle"
+  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    "data-bind": "text: ' ' + GetLangRes('Community_lblMembersNoEntryMessage', 'There are no members in this community currently.')"
+  })))));
 }
 
 /***/ }),

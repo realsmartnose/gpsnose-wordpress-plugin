@@ -19,15 +19,15 @@
  * Version:           1.0.0
  * Author:            smart.nose
  * Author URI:        https://github.com/realsmartnose
- * License:           GPL-2.0+
- * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
+ * License:           MIT
+ * License URI:       https://opensource.org/license/mit/
  * Text Domain:       gpsnose
  * Domain Path:       /languages
  */
 
 // If this file is called directly, abort.
-if (! defined('WPINC')) {
-    die();
+if (!defined('WPINC')) {
+	die();
 }
 
 /**
@@ -43,8 +43,8 @@ define('GPSNOSE_VERSION', '1.0.0');
  */
 function activate_gpsnose()
 {
-    require_once plugin_dir_path(__FILE__) . 'includes/class-gpsnose-activator.php';
-    Gpsnose_Activator::activate();
+	require_once plugin_dir_path(__FILE__) . 'includes/class-gpsnose-activator.php';
+	Gpsnose_Activator::activate();
 }
 
 /**
@@ -53,8 +53,8 @@ function activate_gpsnose()
  */
 function deactivate_gpsnose()
 {
-    require_once plugin_dir_path(__FILE__) . 'includes/class-gpsnose-deactivator.php';
-    Gpsnose_Deactivator::deactivate();
+	require_once plugin_dir_path(__FILE__) . 'includes/class-gpsnose-deactivator.php';
+	Gpsnose_Deactivator::deactivate();
 }
 
 register_activation_hook(__FILE__, 'activate_gpsnose');
@@ -77,12 +77,14 @@ require plugin_dir_path(__FILE__) . 'includes/class-gpsnose.php';
  */
 function run_gpsnose()
 {
-    $plugin = new Gpsnose();
-    $plugin->run();
+	$plugin = new Gpsnose();
+	$plugin->run();
+
+	add_action('init', 'create_block_gpsnose_block_init');
 }
 run_gpsnose();
 
-function create_block_gpsnose_block_init() {
-	register_block_type( __DIR__ . '/build' );
+function create_block_gpsnose_block_init()
+{
+	register_block_type_from_metadata(__DIR__ . '/build');
 }
-add_action( 'init', 'create_block_gpsnose_block_init' );

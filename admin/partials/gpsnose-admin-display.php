@@ -23,8 +23,12 @@
 
 		<?php
 		$options = get_option($this->plugin_name);
+
+		$validationKey = (isset($options['validation-key']) ? $options['validation-key'] : '');
 		$appKey = (isset($options['app-key']) ? $options['app-key'] : '');
 		$mashup = (isset($options['mashup']) ? $options['mashup'] : '');
+		$apiUrl = (isset($options['api-url']) ? $options['api-url'] : '');
+		$dataUrl = (isset($options['data-url']) ? $options['data-url'] : '');
 
 		$checkBoxes = array();
 		$checkBoxes['load-css-bootstrap'] = (isset($options['load-css-bootstrap']) ? $options['load-css-bootstrap'] : '1');
@@ -51,7 +55,7 @@
 		<fieldset>
 			<legend class="screen-reader-text"><span><?php _e('Validation-Key (optional)', $this->plugin_name); ?></span></legend>
 			<label for="<?php echo $this->plugin_name; ?>-validation-key"><?php _e('Validation-Key (optional)', $this->plugin_name); ?></label><br>
-			<input type="text" class="regular-text" id="<?php echo $this->plugin_name; ?>-validation-key" name="<?php echo $this->plugin_name; ?>[validation-key]" value="<?php echo $appKey ?>" />
+			<input type="text" class="regular-text" id="<?php echo $this->plugin_name; ?>-validation-key" name="<?php echo $this->plugin_name; ?>[validation-key]" value="<?php echo $validationKey ?>" />
 		</fieldset>
 
 		<fieldset>
@@ -61,8 +65,8 @@
 		</fieldset>
 
 		<fieldset>
-			<legend class="screen-reader-text"><span><?php echo str_replace("%mashup%", $mashupExample, __('Mashup-Name (e.g. %%mashup%)', $this->plugin_name)) ?></span></legend>
-			<label for="<?php echo $this->plugin_name; ?>-mashup"><?php echo str_replace("%mashup%", $mashupExample, __('Mashup-Name (e.g. %%mashup%)', $this->plugin_name)) ?></label><br>
+			<legend class="screen-reader-text"><span><?php echo str_replace("%mashup%", $mashupExample, (string)_e('Mashup-Name (e.g. %%mashup%)', $this->plugin_name)) ?></span></legend>
+			<label for="<?php echo $this->plugin_name; ?>-mashup"><?php echo str_replace("%mashup%", $mashupExample, (string)_e('Mashup-Name (e.g. %%mashup%)', $this->plugin_name)) ?></label><br>
 			<input type="text" class="regular-text" id="<?php echo $this->plugin_name; ?>-mashup" name="<?php echo $this->plugin_name; ?>[mashup]" value="<?php echo $mashup ?>" />
 		</fieldset>
 
@@ -146,12 +150,12 @@
 		<fieldset>
 			<legend class="screen-reader-text"><span><?php _e('API-URL', $this->plugin_name); ?></span></legend>
 			<label for="<?php echo $this->plugin_name; ?>-api-url"><?php _e('API-URL', $this->plugin_name); ?></label><br>
-			<input type="text" class="regular-text" id="<?php echo $this->plugin_name; ?>-api-url" name="<?php echo $this->plugin_name; ?>[api-url]" value="<?php echo $appKey ?>" />
+			<input type="text" class="regular-text" id="<?php echo $this->plugin_name; ?>-api-url" name="<?php echo $this->plugin_name; ?>[api-url]" value="<?php echo $apiUrl ?>" />
 		</fieldset>
 		<fieldset>
 			<legend class="screen-reader-text"><span><?php _e('DATA-URL', $this->plugin_name); ?></span></legend>
 			<label for="<?php echo $this->plugin_name; ?>-data-url"><?php _e('DATA-URL', $this->plugin_name); ?></label><br>
-			<input type="text" class="regular-text" id="<?php echo $this->plugin_name; ?>-data-url" name="<?php echo $this->plugin_name; ?>[data-url]" value="<?php echo $appKey ?>" />
+			<input type="text" class="regular-text" id="<?php echo $this->plugin_name; ?>-data-url" name="<?php echo $this->plugin_name; ?>[data-url]" value="<?php echo $dataUrl ?>" />
 		</fieldset>
 
 		<?php submit_button('Save all changes', 'primary', 'submit', TRUE); ?>

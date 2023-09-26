@@ -25,9 +25,22 @@ var __webpack_exports__ = {};
  * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-metadata/#view-script
  */
 
-/* eslint-disable no-console */
-console.log('Hello World! (from create-block-gutenpride block)');
-/* eslint-enable no-console */
+var MA_GPSNOSE_IS_MASHUP = true;
+window.addEventListener("load", function () {
+  // gn_data.Settings.MembersPageUrl = $('<textarea />').html('{f:uri.action(action:'pageMembers', controller:'Api', pluginName:'Pagemembers', pageType:'{settings.ajax.pageMembers}', arguments:'{ communityTag : communityTag }')}').text();
+  gn_data.Settings.MembersPageUrl = '/myfancyajax.json';
+  if (!gn_data.User) gn_data.User = {};
+  var vm = new CommunityDetailViewModel(gn_data.Community, gn_data.User);
+  vm.MembersPageUrl = gn_data.Settings.MembersPageUrl;
+  ko.applyBindings(vm, jQuery('#ma-gpsnose-1').get(0));
+
+  // Add first Page of Members
+  if (gn_data.Members) {
+    vm.AddMembers(gn_data.Members);
+  } else {
+    vm.PageMembers();
+  }
+});
 /******/ })()
 ;
 //# sourceMappingURL=view.js.map
