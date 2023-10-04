@@ -157,7 +157,7 @@ class Gpsnose
         $this->loader->add_action('admin_enqueue_scripts', $plugin_admin, 'enqueue_styles');
         $this->loader->add_action('admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts');
 
-        // Settingd
+        // Options
         $this->loader->add_action('admin_init', $plugin_admin, 'options_update');
 
         // Add menu item
