@@ -1,14 +1,6 @@
 <?php
 
-/**
- * Fired during plugin activation
- *
- * @link       https://github.com/realsmartnose
- * @since      1.0.0
- *
- * @package    Gpsnose
- * @subpackage Gpsnose/includes
- */
+namespace Swizzbits\Gpsnose\Includes;
 
 /**
  * Fired during plugin activation.
@@ -20,7 +12,7 @@
  * @subpackage Gpsnose/includes
  * @author smart.nose <dev@gpsnose.com>
  */
-class Gpsnose_Activator
+class Activator
 {
 
     /**

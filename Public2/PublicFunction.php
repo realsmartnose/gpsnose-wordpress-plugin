@@ -1,14 +1,6 @@
 <?php
 
-/**
- * The public-facing functionality of the plugin.
- *
- * @link       https://github.com/realsmartnose
- * @since      1.0.0
- *
- * @package    Gpsnose
- * @subpackage Gpsnose/public
- */
+namespace Swizzbits\Gpsnose\Public;
 
 /**
  * The public-facing functionality of the plugin.
@@ -20,7 +12,7 @@
  * @subpackage Gpsnose/public
  * @author smart.nose <dev@gpsnose.com>
  */
-class Gpsnose_Public
+class PublicFunction
 {
 
     /**

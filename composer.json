@@ -9,7 +9,12 @@
         }
     ],
     "require": {
-		"smartnoses/gpsnosesdk": "1.2.3",
-		"wp-cli/wp-cli-bundle": "*"
+        "smartnoses/gpsnosesdk": "1.2.3",
+        "wp-cli/wp-cli-bundle": "*"
+    },
+	"autoload": {
+        "psr-4": {
+            "Swizzbits\\Gpsnose\\": "./"
+        }
     }
 }

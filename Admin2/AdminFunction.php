@@ -1,14 +1,6 @@
 <?php
 
-/**
- * The admin-specific functionality of the plugin.
- *
- * @link       https://github.com/realsmartnose
- * @since      1.0.0
- *
- * @package    Gpsnose
- * @subpackage Gpsnose/admin
- */
+namespace Swizzbits\Gpsnose\Admin;
 
 /**
  * The admin-specific functionality of the plugin.
@@ -20,7 +12,7 @@
  * @subpackage Gpsnose/admin
  * @author smart.nose <dev@gpsnose.com>
  */
-class Gpsnose_Admin
+class AdminFunction
 {
 
 	/**
@@ -63,19 +55,7 @@ class Gpsnose_Admin
 	 */
 	public function enqueue_styles()
 	{
-
-		/**
-		 * This function is provided for demonstration purposes only.
-		 *
-		 * An instance of this class should be passed to the run() function
-		 * defined in Gpsnose_Loader as all of the hooks are defined
-		 * in that particular class.
-		 *
-		 * The Gpsnose_Loader will then create the relationship
-		 * between the defined hooks and the functions defined in this
-		 * class.
-		 */
-		wp_enqueue_style($this->plugin_name, plugin_dir_url(__FILE__) . 'css/gpsnose-admin.css', array(), $this->version, 'all');
+		wp_enqueue_style($this->plugin_name, plugin_dir_url(__FILE__) . 'css/style.css', array(), $this->version, 'all');
 	}
 
 	/**
@@ -85,19 +65,7 @@ class Gpsnose_Admin
 	 */
 	public function enqueue_scripts()
 	{
-
-		/**
-		 * This function is provided for demonstration purposes only.
-		 *
-		 * An instance of this class should be passed to the run() function
-		 * defined in Gpsnose_Loader as all of the hooks are defined
-		 * in that particular class.
-		 *
-		 * The Gpsnose_Loader will then create the relationship
-		 * between the defined hooks and the functions defined in this
-		 * class.
-		 */
-		wp_enqueue_script($this->plugin_name, plugin_dir_url(__FILE__) . 'js/gpsnose-admin.js', array(
+		wp_enqueue_script($this->plugin_name, plugin_dir_url(__FILE__) . 'js/script.js', array(
 			'jquery'
 		), $this->version, false);
 	}
@@ -109,18 +77,9 @@ class Gpsnose_Admin
 	 */
 	public function add_plugin_admin_menu()
 	{
-
-		/*
-         * Add a settings page for this plugin to the Settings menu.
-         *
-         * NOTE: Alternative menu locations are available via WordPress administration menu functions.
-         *
-         * Administration Menus: http://codex.wordpress.org/Administration_Menus
-         *
-         */
 		add_options_page('GpsNose Functions Setup', 'GpsNose', 'manage_options', $this->plugin_name, array(
 			$this,
-			'display_plugin_setup_page'
+			'display_plugin_settings_page'
 		));
 	}
 
@@ -131,9 +90,6 @@ class Gpsnose_Admin
 	 */
 	public function add_action_links($links)
 	{
-		/*
-         * Documentation : https://codex.wordpress.org/Plugin_API/Filter_Reference/plugin_action_links_(plugin_file_name)
-         */
 		$settings_link = array(
 			'<a href="' . admin_url('options-general.php?page=' . $this->plugin_name) . '">' . __('Settings', $this->plugin_name) . '</a>'
 		);
@@ -145,9 +101,9 @@ class Gpsnose_Admin
 	 *
 	 * @since 1.0.0
 	 */
-	public function display_plugin_setup_page()
+	public function display_plugin_settings_page()
 	{
-		include_once('partials/gpsnose-admin-display.php');
+		include_once('partials/settings.php');
 	}
 
 	/**
@@ -193,7 +149,6 @@ class Gpsnose_Admin
 	 */
 	public function options_update()
 	{
-		// TODO: Update subcomms?
 		register_setting($this->plugin_name, $this->plugin_name, array(
 			$this,
 			'validate'

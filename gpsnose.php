@@ -1,5 +1,11 @@
 <?php
 
+use Swizzbits\Gpsnose\Includes\Activator;
+use Swizzbits\Gpsnose\Includes\Deactivator;
+use Swizzbits\Gpsnose\Includes\Plugin;
+
+require plugin_dir_path(__FILE__) . 'vendor/autoload.php';
+
 /**
  * The plugin bootstrap file
  *
@@ -43,8 +49,7 @@ define('GPSNOSE_VERSION', '1.0.0');
  */
 function activate_gpsnose()
 {
-	require_once plugin_dir_path(__FILE__) . 'includes/class-gpsnose-activator.php';
-	Gpsnose_Activator::activate();
+	Activator::activate();
 }
 
 /**
@@ -53,8 +58,7 @@ function activate_gpsnose()
  */
 function deactivate_gpsnose()
 {
-	require_once plugin_dir_path(__FILE__) . 'includes/class-gpsnose-deactivator.php';
-	Gpsnose_Deactivator::deactivate();
+	Deactivator::deactivate();
 }
 
 register_activation_hook(__FILE__, 'activate_gpsnose');
@@ -64,7 +68,6 @@ register_deactivation_hook(__FILE__, 'deactivate_gpsnose');
  * The core plugin class that is used to define internationalization,
  * admin-specific hooks, and public-facing site hooks.
  */
-require plugin_dir_path(__FILE__) . 'includes/class-gpsnose.php';
 
 /**
  * Begins execution of the plugin.
@@ -77,7 +80,7 @@ require plugin_dir_path(__FILE__) . 'includes/class-gpsnose.php';
  */
 function run_gpsnose()
 {
-	$plugin = new Gpsnose();
+	$plugin = new Plugin();
 	$plugin->run();
 
 	add_action('init', 'create_block_gpsnose_block_init');
