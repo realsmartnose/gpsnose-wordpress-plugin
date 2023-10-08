@@ -9,7 +9,7 @@ namespace Swizzbits\Gpsnose\Includes;
  *
  * @since 1.0.0
  * @package Gpsnose
- * @subpackage Gpsnose/includes
+ * @subpackage Gpsnose/Includes
  * @author smart.nose <dev@gpsnose.com>
  */
 class Activator

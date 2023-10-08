@@ -9,7 +9,7 @@ namespace Swizzbits\Gpsnose\Admin;
  * enqueue the admin-specific stylesheet and JavaScript.
  *
  * @package Gpsnose
- * @subpackage Gpsnose/admin
+ * @subpackage Gpsnose/Admin
  * @author smart.nose <dev@gpsnose.com>
  */
 class AdminFunction

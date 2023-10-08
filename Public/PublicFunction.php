@@ -9,7 +9,7 @@ namespace Swizzbits\Gpsnose\Public;
  * enqueue the public-facing stylesheet and JavaScript.
  *
  * @package Gpsnose
- * @subpackage Gpsnose/public
+ * @subpackage Gpsnose/Public
  * @author smart.nose <dev@gpsnose.com>
  */
 class PublicFunction

@@ -16,19 +16,18 @@ use Swizzbits\Gpsnose\Public\PublicFunction;
  *
  * @since 1.0.0
  * @package Gpsnose
- * @subpackage Gpsnose/includes
+ * @subpackage Gpsnose/Includes
  * @author smart.nose <dev@gpsnose.com>
  */
 class Plugin
 {
-
     /**
      * The loader that's responsible for maintaining and registering all hooks that power
      * the plugin.
      *
      * @since 1.0.0
      * @access protected
-     * @var Gpsnose_Loader $loader Maintains and registers all hooks for the plugin.
+     * @var Loader $loader Maintains and registers all hooks for the plugin.
      */
     protected $loader;
 
@@ -61,62 +60,13 @@ class Plugin
      */
     public function __construct()
     {
-        if (defined('GPSNOSE_VERSION')) {
-            $this->version = GPSNOSE_VERSION;
-        } else {
-            $this->version = '1.0.0';
-        }
-        $this->plugin_name = 'gpsnose';
+		$this->version = GPSNOSE_VERSION;
+        $this->plugin_name = GPSNOSE_PLUGIN_NAME;
 
-        $this->load_dependencies();
+        $this->loader = new Loader();
         $this->set_locale();
         $this->define_admin_hooks();
         $this->define_public_hooks();
-    }
-
-    /**
-     * Load the required dependencies for this plugin.
-     *
-     * Include the following files that make up the plugin:
-     *
-     * - Gpsnose_Loader. Orchestrates the hooks of the plugin.
-     * - Gpsnose_i18n. Defines internationalization functionality.
-     * - Gpsnose_Admin. Defines all hooks for the admin area.
-     * - Gpsnose_Public. Defines all hooks for the public side of the site.
-     *
-     * Create an instance of the loader which will be used to register the hooks
-     * with WordPress.
-     *
-     * @since 1.0.0
-     * @access private
-     */
-    private function load_dependencies()
-    {
-
-        /**
-         * The class responsible for orchestrating the actions and filters of the
-         * core plugin.
-         */
-        require_once plugin_dir_path(dirname(__FILE__)) . 'includes/class-gpsnose-loader.php';
-
-        /**
-         * The class responsible for defining internationalization functionality
-         * of the plugin.
-         */
-        require_once plugin_dir_path(dirname(__FILE__)) . 'includes/class-gpsnose-i18n.php';
-
-        /**
-         * The class responsible for defining all actions that occur in the admin area.
-         */
-        require_once plugin_dir_path(dirname(__FILE__)) . 'admin/class-gpsnose-admin.php';
-
-        /**
-         * The class responsible for defining all actions that occur in the public-facing
-         * side of the site.
-         */
-        require_once plugin_dir_path(dirname(__FILE__)) . 'public/class-gpsnose-public.php';
-
-        $this->loader = new Loader();
     }
 
     /**
@@ -131,7 +81,6 @@ class Plugin
     private function set_locale()
     {
         $plugin_i18n = new I18n();
-
         $this->loader->add_action('plugins_loaded', $plugin_i18n, 'load_plugin_textdomain');
     }
 

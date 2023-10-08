@@ -9,7 +9,7 @@
  * @since      1.0.0
  *
  * @package    Gpsnose
- * @subpackage Gpsnose/admin/partials
+ * @subpackage Gpsnose/Admin/partials
  */
 ?>
 

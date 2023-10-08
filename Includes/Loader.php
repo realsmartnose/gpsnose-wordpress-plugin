@@ -10,7 +10,7 @@ namespace Swizzbits\Gpsnose\Includes;
  * run function to execute the list of actions and filters.
  *
  * @package Gpsnose
- * @subpackage Gpsnose/includes
+ * @subpackage Gpsnose/Includes
  * @author smart.nose <dev@gpsnose.com>
  */
 class Loader
