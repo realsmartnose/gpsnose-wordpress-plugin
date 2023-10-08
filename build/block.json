@@ -12,6 +12,14 @@
     "html": false
   },
   "textdomain": "gpsnose",
+  "attributes": {
+    "type": {
+      "type": "string"
+    },
+    "mashup": {
+      "type": "string"
+    }
+  },
   "editorScript": "file:./index.js",
   "editorStyle": "file:./index.css",
   "style": "file:./style-index.css",

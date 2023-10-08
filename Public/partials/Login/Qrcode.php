@@ -29,9 +29,9 @@ $(document).ready(function() {
 </script>
 
 <!-- MAIN_BEG -->
-<div class="ma-gpsnose" data-gn-version="1.2.0">
+<div class="ma-gpsnose" data-gn-version="1.2.4">
 
-    <div id="ma-gpsnose-{record}" class="ma-gpsnose-login" data-bind="visible:true" style="display:none;">
+    <div id="ma-gpsnose-<?=$record?>" class="ma-gpsnose-login" data-bind="visible:true" style="display:none;">
 
         <div id="polling-stopped-message" style="display: none;">
             <div class="alert alert-danger">
@@ -100,12 +100,15 @@ $(document).ready(function() {
 
 <script type="text/javascript">
 var MA_GPSNOSE_IS_MASHUP = true;
-$(function() {
-    if (! gn_data.User) gn_data.User = {};
-    ko.applyBindings(new BaseViewModel(), $('#ma-gpsnose-{record}').get(0));
-    window.setTimeout(function() {
-        MaWaitForLogin(gn_data.Settings.LoginVerifyUrl, gn_data.Settings.ReturnUrl, new Date().getTime() + 60000, function() { $('#polling-stopped-message').show(); });
-    }, 3500);
-});
+(function($) {
+    $(function() {
+        if (! gn_data.User) gn_data.User = {};
+        ko.applyBindings(new BaseViewModel(), $('#ma-gpsnose-<?=$record?>').get(0));
+        window.setTimeout(function() {
+            MaWaitForLogin(gn_data.Settings.LoginVerifyUrl, gn_data.Settings.ReturnUrl, new Date().getTime() + 60000, function() { $('#polling-stopped-message').show(); });
+        }, 3500);
+    });
+})(jQuery);
+
 </script>
 <!-- MAIN_END -->

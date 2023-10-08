@@ -27,9 +27,9 @@ $(document).ready(function() {
 </script>
 
 <!-- MAIN_BEG -->
-<div class="ma-gpsnose" data-gn-version="1.2.0">
+<div class="ma-gpsnose" data-gn-version="1.2.4">
 
-    <div id="ma-gpsnose-{record}" class="ma-gpsnose-news" data-bind="visible:true" style="display: none;">
+    <div id="ma-gpsnose-<?=$record?>" class="ma-gpsnose-news" data-bind="visible:true" style="display: none;">
 
         <div class="btn-group btn-group-sm ma-btn-group" data-bind="attr: { 'data-remove': ! CommunityEntity.TagName }">
             <a class="btn btn-default btn-outline-primary" data-external role="button" data-bind="html: CommunityEntity.DisplayName(), attr: { href: CommunityEntity.DetailUrl() }"></a>
@@ -67,26 +67,28 @@ $(document).ready(function() {
 
 <script type="text/javascript">
 var MA_GPSNOSE_IS_MASHUP = true;
-$(function() {
-    if (! gn_data.User) gn_data.User = {};
-    var vm = new OverviewViewModel();
-    vm.NewsPageUrl = gn_data.Settings.NewsPageUrl;
-    if (gn_data.Community && gn_data.Community.TagName) vm.CommunityTag(gn_data.Community.TagName);
-    vm.OnAddNews = function() {
-        $('#ma-gpsnose-{record} .masonry img:not([data-lazy-img])').imagesLoaded(function() {
-            MasonryReload();
-        });
-    }
+(function($) {
+    $(function() {
+        if (! gn_data.User) gn_data.User = {};
+        var vm = new OverviewViewModel();
+        vm.NewsPageUrl = gn_data.Settings.NewsPageUrl;
+        if (gn_data.Community && gn_data.Community.TagName) vm.CommunityTag(gn_data.Community.TagName);
+        vm.OnAddNews = function() {
+            $('#ma-gpsnose-<?=$record?> .masonry img:not([data-lazy-img])').imagesLoaded(function() {
+                MasonryReload();
+            });
+        }
 
-    ko.applyBindings(vm, $('#ma-gpsnose-{record}').get(0));
+        ko.applyBindings(vm, $('#ma-gpsnose-<?=$record?>').get(0));
 
-    // Add first Page of News
-    if (gn_data.News) {
-        vm.AddNews(gn_data.News);
-    } else {
-        vm.PageNews();
-    }
-});
+        // Add first Page of News
+        if (gn_data.News) {
+            vm.AddNews(gn_data.News);
+        } else {
+            vm.PageNews();
+        }
+    });
+})(jQuery);
 </script>
 
 <script type="text/html" id="UnknownTemplate">

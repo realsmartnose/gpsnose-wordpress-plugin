@@ -1,3 +1,5 @@
+import { TextControl, SelectControl } from '@wordpress/components';
+
 /**
  * Retrieves the translation of text.
  *
@@ -29,10 +31,29 @@ import './editor.scss';
  *
  * @return {WPElement} Element to render.
  */
-export default function Edit() {
+export default function Edit({ attributes, setAttributes }) {
+	const blockProps = useBlockProps();
+	const updateValueMashup = (val) => {
+		setAttributes({ mashup: val });
+	};
 	return (
-		<p {...useBlockProps()}>
-			{__('GpsNose Members', 'gutenpride')}
-		</p>
+		<div {...blockProps}>
+			<h4>GpsNose</h4>
+			<SelectControl
+				label={__('Display', 'gpsnose')}
+				value={attributes.type}
+				options={[
+					{ label: __('Members', 'gpsnose'), value: 'members' },
+					{ label: __('Login', 'gpsnose'), value: 'login' },
+				]}
+				onChange={(val) => setAttributes({ type: val })}
+			/>
+			<TextControl
+				label={__('Mashup', 'gpsnose')}
+				value={attributes.mashup}
+				onChange={(val) => setAttributes({ mashup: val })}
+			/>
+			<hr />
+		</div>
 	);
 }

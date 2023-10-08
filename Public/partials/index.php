@@ -13,4 +13,15 @@
  */
 ?>
 
-<h1>GpsNose Frontend</h1>
+<?php
+if (isset($attributes) && isset($attributes['type'])) {
+	switch ($attributes['type']) {
+		case 'members':
+			require 'Member/index.php';
+			break;
+	}
+}
+?>
+
+<p><?= $partial ?></p>
+<p><?= json_encode($attributes) ?></p>

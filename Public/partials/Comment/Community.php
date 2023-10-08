@@ -42,9 +42,9 @@ $(document).ready(function() {
 </script>
 
 <!-- MAIN_BEG -->
-<div class="ma-gpsnose" data-gn-version="1.2.0">
+<div class="ma-gpsnose" data-gn-version="1.2.4">
 
-    <div id="ma-gpsnose-{record}" class="ma-gpsnose-comment" data-bind="visible:true" style="display:none;">
+    <div id="ma-gpsnose-<?=$record?>" class="ma-gpsnose-comment" data-bind="visible:true" style="display:none;">
 
         <div class="btn-group btn-group-sm ma-btn-group">
             <a class="btn btn-default btn-outline-primary" data-external data-bind="html: Entity.DisplayName(), attr: { href: Entity.DetailUrl() }"></a>
@@ -72,11 +72,13 @@ $(document).ready(function() {
 <script type="text/javascript">
 var MA_GPSNOSE_IS_MASHUP = true;
 var vm;
-$(function() {
-    if (! gn_data.User) gn_data.User = {};
-    vm = new CommunityDetailViewModel(gn_data.Community, gn_data.User);
-    ko.applyBindings(vm, $('#ma-gpsnose-{record}').get(0));
-});
+(function($) {
+    $(function() {
+        if (! gn_data.User) gn_data.User = {};
+        vm = new CommunityDetailViewModel(gn_data.Community, gn_data.User);
+        ko.applyBindings(vm, $('#ma-gpsnose-<?=$record?>').get(0));
+    });
+})(jQuery);
 function ma_gpsnose_change(container) {
     $(container).imagesLoaded(function() {
         setTimeout(function() { MasonryReload(); }, 250);

@@ -29,9 +29,9 @@ $(document).ready(function() {
 </script>
 
 <!-- MAIN_BEG -->
-<div class="ma-gpsnose" data-gn-version="1.2.0">
+<div class="ma-gpsnose" data-gn-version="1.2.4">
 
-    <div id="ma-gpsnose-{record}" class="ma-gpsnose-nearby-events" data-bind="visible:true" style="display:none;">
+    <div id="ma-gpsnose-<?=$record?>" class="ma-gpsnose-nearby-events" data-bind="visible:true" style="display:none;">
 
         <div class="btn-group btn-group-sm ma-btn-group">
             <a class="btn btn-default btn-outline-primary" data-external data-bind="html: Entity.DisplayName(), attr: { href: Entity.DetailUrl() }"></a>
@@ -95,22 +95,24 @@ $(document).ready(function() {
 
 <script type="text/javascript">
 var MA_GPSNOSE_IS_MASHUP = true;
-$(function() {
-    if (! gn_data.User) gn_data.User = {};
-    var vm = new NearbyViewModel(gn_data.Community, gn_data.User);
-    vm.PageableEvents.OnAddItems = function() {
-        $('#ma-gpsnose-{record} .masonry').imagesLoaded(function() {
-            MasonryReload();
-        });
-    }
+(function($) {
+    $(function() {
+        if (! gn_data.User) gn_data.User = {};
+        var vm = new NearbyViewModel(gn_data.Community, gn_data.User);
+        vm.PageableEvents.OnAddItems = function() {
+            $('#ma-gpsnose-<?=$record?> .masonry').imagesLoaded(function() {
+                MasonryReload();
+            });
+        }
 
-    ko.applyBindings(vm, $('#ma-gpsnose-{record}').get(0));
+        ko.applyBindings(vm, $('#ma-gpsnose-<?=$record?>').get(0));
 
-    if (typeof gn_data.Events != 'object') {
-        if (console) console.warn(gn_data.Events);
-    } else if (gn_data.Events) {
-        vm.PageableEvents.AddItems(gn_data.Events);
-    }
-});
+        if (typeof gn_data.Events != 'object') {
+            if (console) console.warn(gn_data.Events);
+        } else if (gn_data.Events) {
+            vm.PageableEvents.AddItems(gn_data.Events);
+        }
+    });
+})(jQuery);
 </script>
 <!-- MAIN_END -->
