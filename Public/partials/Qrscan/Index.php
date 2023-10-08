@@ -14,16 +14,18 @@
 ?>
 
 <script>
-$(document).ready(function() {
-    AddLangRes('Common_btnJoinCommunity', '<?php __("Common_btnJoinCommunity")?>');
-    AddLangRes('Common_lblLoadMore', '<?php __("Common_lblLoadMore")?>');
-    AddLangRes('Common_lblRequestInProgress', '<?php __("Common_lblRequestInProgress")?>');
-    AddLangRes('Common_lblScanToJoin', '<?php __("Common_lblScanToJoin")?>');
-    AddLangRes('Home_Index_lblNoNews', '<?php __("Home_Index_lblNoNews")?>');
-    AddLangRes('NewsPart_Load_lblBlogWasDeleted', '<?php __("NewsPart_Load_lblBlogWasDeleted")?>');
-    AddLangRes('NewsPart_Load_lblCommentWasDeleted', '<?php __("NewsPart_Load_lblCommentWasDeleted")?>');
-    gn_data.Settings.NewsPageUrl = $('<textarea />').html('{f:uri.action(action:'pageNews', controller:'Api', pluginName:'Pagenews', pageType:'{settings.ajax.pageNews}', arguments:'{ communityTag : communityTag }')}').text();
-});
+(function($) {
+    $(document).ready(function() {
+        AddLangRes('Common_btnJoinCommunity', '<?php __("Common_btnJoinCommunity")?>');
+        AddLangRes('Common_lblLoadMore', '<?php __("Common_lblLoadMore")?>');
+        AddLangRes('Common_lblRequestInProgress', '<?php __("Common_lblRequestInProgress")?>');
+        AddLangRes('Common_lblScanToJoin', '<?php __("Common_lblScanToJoin")?>');
+        AddLangRes('Home_Index_lblNoNews', '<?php __("Home_Index_lblNoNews")?>');
+        AddLangRes('NewsPart_Load_lblBlogWasDeleted', '<?php __("NewsPart_Load_lblBlogWasDeleted")?>');
+        AddLangRes('NewsPart_Load_lblCommentWasDeleted', '<?php __("NewsPart_Load_lblCommentWasDeleted")?>');
+        gn_data.Settings.NewsPageUrl = $('<textarea />').html('{f:uri.action(action:'pageNews', controller:'Api', pluginName:'Pagenews', pageType:'{settings.ajax.pageNews}', arguments:'{ communityTag : communityTag }')}').text();
+    });
+})(jQuery);
 </script>
 
 <!-- MAIN_BEG -->
@@ -75,23 +77,23 @@ var MA_GPSNOSE_IS_MASHUP = true;
 var selector = "#ma-gpsnose-<?=$record?>";
 
 (function($) {
-	$(function() {
-		if (! gn_data.User) gn_data.User = {};
-		var vm = new SecurityTokenValidatorViewModel();
-		vm.ValidateUrl = gn_data.Settings.ValidateUrl;
-		vm.setDefaultDecoder($(selector + " #gn-qr-code-scanner canvas"), gn_data.Settings.DecoderWorkerPath);
+    $(function() {
+        if (! gn_data.User) gn_data.User = {};
+        var vm = new SecurityTokenValidatorViewModel();
+        vm.ValidateUrl = gn_data.Settings.ValidateUrl;
+        vm.setDefaultDecoder($(selector + " #gn-qr-code-scanner canvas"), gn_data.Settings.DecoderWorkerPath);
 
-		vm.OnValidateComplete = function(tokenIsValide, creatorUserName) {
-			var success = tokenIsValide;
-			// Customer-Rules here...
-			if (success)
-				vm.MessageSuccess(GetLangRes('SecurityTokenValidator_validationSuccess', 'The security-token of %user_name% was successfully validated').replace('%user_name%', creatorUserName));
-			else
-				vm.MessageError(GetLangRes('SecurityTokenValidator_validationFail', 'The security-token of %user_name% is not valide').replace('%user_name%', creatorUserName));
-		};
+        vm.OnValidateComplete = function(tokenIsValide, creatorUserName) {
+            var success = tokenIsValide;
+            // Customer-Rules here...
+            if (success)
+                vm.MessageSuccess(GetLangRes('SecurityTokenValidator_validationSuccess', 'The security-token of %user_name% was successfully validated').replace('%user_name%', creatorUserName));
+            else
+                vm.MessageError(GetLangRes('SecurityTokenValidator_validationFail', 'The security-token of %user_name% is not valide').replace('%user_name%', creatorUserName));
+        };
 
-		ko.applyBindings(vm, $(selector).get(0));
-	});
+        ko.applyBindings(vm, $(selector).get(0));
+    });
 })(jQuery);
 </script>
 <!-- MAIN_END -->

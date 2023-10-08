@@ -14,14 +14,16 @@
 ?>
 
 <script>
-$(document).ready(function() {
-    AddLangRes('Common_btnJoinCommunity', '<?php __("Common_btnJoinCommunity")?>');
-    AddLangRes('Common_lblLoadMore', '<?php __("Common_lblLoadMore")?>');
-    AddLangRes('Common_lblRequestInProgress', '<?php __("Common_lblRequestInProgress")?>');
-    AddLangRes('Common_lblScanToJoin', '<?php __("Common_lblScanToJoin")?>');
-    AddLangRes('Community_lblMembersNoEntryMessage', '<?php __("Community_lblMembersNoEntryMessage")?>');
-    gn_data.Settings.MembersPageUrl = $('<textarea />').html('{f:uri.action(action:'pageMembers', controller:'Api', pluginName:'Pagemembers', pageType:'{settings.ajax.pageMembers}', arguments:'{ communityTag : communityTag }')}').text();
-});
+(function($) {
+    $(document).ready(function() {
+        AddLangRes('Common_btnJoinCommunity', '<?php __("Common_btnJoinCommunity")?>');
+        AddLangRes('Common_lblLoadMore', '<?php __("Common_lblLoadMore")?>');
+        AddLangRes('Common_lblRequestInProgress', '<?php __("Common_lblRequestInProgress")?>');
+        AddLangRes('Common_lblScanToJoin', '<?php __("Common_lblScanToJoin")?>');
+        AddLangRes('Community_lblMembersNoEntryMessage', '<?php __("Community_lblMembersNoEntryMessage")?>');
+        gn_data.Settings.MembersPageUrl = $('<textarea />').html('{f:uri.action(action:'pageMembers', controller:'Api', pluginName:'Pagemembers', pageType:'{settings.ajax.pageMembers}', arguments:'{ communityTag : communityTag }')}').text();
+    });
+})(jQuery);
 </script>
 
 <!-- MAIN_BEG -->

@@ -14,18 +14,20 @@
 ?>
 
 <script>
-$(document).ready(function() {
-	AddLangRes('Common_btnJoinCommunity', '<?php __("Common_btnJoinCommunity")?>');
-    AddLangRes('Common_btnLogin', '<?php __("Common_btnLogin")?>');
-    AddLangRes('Common_lblError', '<?php __("Common_lblError")?>');
-    AddLangRes('Common_lblLoadMore', '<?php __("Common_lblLoadMore")?>');
-    AddLangRes('Common_lblRequestInProgress', '<?php __("Common_lblRequestInProgress")?>');
-    AddLangRes('Common_lblScanToJoin', '<?php __("Common_lblScanToJoin")?>');
-    AddLangRes('Common_loginRequired', '<?php __("Common_loginRequired")?>');
-    AddLangRes('Nearby_lblNoPois', '<?php __("Nearby_lblNoPois")?>');
-    gn_data.Settings.LoginUrl = $('<textarea />').html('{f:uri.page(pageUid:'{settings.login.loginPid}')}').text();
-    gn_data.Settings.NearbyPoisPageUrl = $('<textarea />').html('{f:uri.action(action:'pageNearbyPois', controller:'Api', pluginName:'Pagenearbypois', pageType:'{settings.ajax.pageNearbyPois}', arguments:'{ communityTag : communityTag }')}').text();
-});
+(function($) {
+    $(document).ready(function() {
+        AddLangRes('Common_btnJoinCommunity', '<?php __("Common_btnJoinCommunity")?>');
+        AddLangRes('Common_btnLogin', '<?php __("Common_btnLogin")?>');
+        AddLangRes('Common_lblError', '<?php __("Common_lblError")?>');
+        AddLangRes('Common_lblLoadMore', '<?php __("Common_lblLoadMore")?>');
+        AddLangRes('Common_lblRequestInProgress', '<?php __("Common_lblRequestInProgress")?>');
+        AddLangRes('Common_lblScanToJoin', '<?php __("Common_lblScanToJoin")?>');
+        AddLangRes('Common_loginRequired', '<?php __("Common_loginRequired")?>');
+        AddLangRes('Nearby_lblNoPois', '<?php __("Nearby_lblNoPois")?>');
+        gn_data.Settings.LoginUrl = $('<textarea />').html('{f:uri.page(pageUid:'{settings.login.loginPid}')}').text();
+        gn_data.Settings.NearbyPoisPageUrl = $('<textarea />').html('{f:uri.action(action:'pageNearbyPois', controller:'Api', pluginName:'Pagenearbypois', pageType:'{settings.ajax.pageNearbyPois}', arguments:'{ communityTag : communityTag }')}').text();
+    });
+})(jQuery);
 </script>
 
 <!-- MAIN_BEG -->

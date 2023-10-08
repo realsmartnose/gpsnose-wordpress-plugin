@@ -17,15 +17,17 @@
 var tLoginVerifyUrl = $('<textarea />').html('{f:uri.action(action: 'loginVerifie', controller: 'Api', pageType: '{settings.ajax.loginVerifie}', arguments: {mashup : mashup, loginId:'{login_id}'})}').text();
 var tReturnUrl = '{return_url}';
 var tQrCodeImage = '{qr_code_image}';
-$(document).ready(function() {
-    AddLangRes('Account_Login_lblTitle', '<?php __("Account_Login_lblTitle")?>');
-    AddLangRes('Account_Login_lblLoginText', '<?php __("Account_Login_lblLoginText")?>');
-    AddLangRes('Common_lblUnknownError', '<?php __("Common_lblUnknownError")?>');
-    AddLangRes('Common_lblCompanyName', '<?php __("Common_lblCompanyName")?>');
-    gn_data.Settings.LoginVerifyUrl = tLoginVerifyUrl;
-    gn_data.Settings.ReturnUrl = tReturnUrl;
-    gn_data.Settings.QrCodeImage = tQrCodeImage;
-});
+(function($) {
+    $(document).ready(function() {
+        AddLangRes('Account_Login_lblTitle', '<?php __("Account_Login_lblTitle")?>');
+        AddLangRes('Account_Login_lblLoginText', '<?php __("Account_Login_lblLoginText")?>');
+        AddLangRes('Common_lblUnknownError', '<?php __("Common_lblUnknownError")?>');
+        AddLangRes('Common_lblCompanyName', '<?php __("Common_lblCompanyName")?>');
+        gn_data.Settings.LoginVerifyUrl = tLoginVerifyUrl;
+        gn_data.Settings.ReturnUrl = tReturnUrl;
+        gn_data.Settings.QrCodeImage = tQrCodeImage;
+    });
+})(jQuery);
 </script>
 
 <!-- MAIN_BEG -->

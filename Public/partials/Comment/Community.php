@@ -14,31 +14,33 @@
 ?>
 
 <script>
-$(document).ready(function() {
-    AddLangRes('Comment_lblErrorTextRequired', '<?php __("Comment_lblErrorTextRequired")?>');
-    AddLangRes('Comment_lblErrorCannotSave', '<?php __("Comment_lblErrorCannotSave")?>');
-    AddLangRes('Common_btnClose', '<?php __("Common_btnClose")?>');
-    AddLangRes('Common_btnDelete', '<?php __("Common_btnDelete")?>');
-    AddLangRes('Common_btnEdit', '<?php __("Common_btnEdit")?>');
-    AddLangRes('Common_btnJoinCommunity', '<?php __("Common_btnJoinCommunity")?>');
-    AddLangRes('Common_btnLogin', '<?php __("Common_btnLogin")?>');
-    AddLangRes('Common_btnOk', '<?php __("Common_btnOk")?>');
-    AddLangRes('Common_btnSend', '<?php __("Common_btnSend")?>');
-    AddLangRes('Common_btnShowProfile', '<?php __("Common_btnShowProfile")?>');
-    AddLangRes('Common_lblCommentAddHint', '<?php __("Common_lblCommentAddHint")?>');
-    AddLangRes('Common_lblCommentEdit', '<?php __("Common_lblCommentEdit")?>');
-    AddLangRes('Common_lblCommentEditHint', '<?php __("Common_lblCommentEditHint")?>');
-    AddLangRes('Common_lblComments', '<?php __("Common_lblComments")?>');
-    AddLangRes('Common_lblError', '<?php __("Common_lblError")?>');
-    AddLangRes('Common_lblLoadMore', '<?php __("Common_lblLoadMore")?>');
-    AddLangRes('Common_lblNoCommentsAvailable', '<?php __("Common_lblNoCommentsAvailable")?>');
-    AddLangRes('Common_lblRequestInProgress', '<?php __("Common_lblRequestInProgress")?>');
-    AddLangRes('Common_lblScanToJoin', '<?php __("Common_lblScanToJoin")?>');
-    AddLangRes('Community_loginRequired', '<f:translate key="Community_loginRequired" />');
-    gn_data.Settings.CommentPageUrl = $('<textarea />').html('{f:uri.action(action:'pageComments', controller:'Api', pluginName:'Pagecomments', pageType:'{settings.ajax.pageComments}', arguments:'{ communityTag : communityTag }')}').text();
-    gn_data.Settings.CommentSaveUrl = $('<textarea />').html('{f:uri.action(action:'commentSave', controller:'Api', pluginName:'Commentsave', pageType:'{settings.ajax.commentSave}', arguments:'{ communityTag : communityTag }')}').text();
-    gn_data.Settings.LoginUrl = $('<textarea />').html('{f:uri.page(pageUid:'{settings.login.loginPid}')}').text();
-});
+(function($) {
+    $(document).ready(function() {
+        AddLangRes('Comment_lblErrorTextRequired', '<?php __("Comment_lblErrorTextRequired")?>');
+        AddLangRes('Comment_lblErrorCannotSave', '<?php __("Comment_lblErrorCannotSave")?>');
+        AddLangRes('Common_btnClose', '<?php __("Common_btnClose")?>');
+        AddLangRes('Common_btnDelete', '<?php __("Common_btnDelete")?>');
+        AddLangRes('Common_btnEdit', '<?php __("Common_btnEdit")?>');
+        AddLangRes('Common_btnJoinCommunity', '<?php __("Common_btnJoinCommunity")?>');
+        AddLangRes('Common_btnLogin', '<?php __("Common_btnLogin")?>');
+        AddLangRes('Common_btnOk', '<?php __("Common_btnOk")?>');
+        AddLangRes('Common_btnSend', '<?php __("Common_btnSend")?>');
+        AddLangRes('Common_btnShowProfile', '<?php __("Common_btnShowProfile")?>');
+        AddLangRes('Common_lblCommentAddHint', '<?php __("Common_lblCommentAddHint")?>');
+        AddLangRes('Common_lblCommentEdit', '<?php __("Common_lblCommentEdit")?>');
+        AddLangRes('Common_lblCommentEditHint', '<?php __("Common_lblCommentEditHint")?>');
+        AddLangRes('Common_lblComments', '<?php __("Common_lblComments")?>');
+        AddLangRes('Common_lblError', '<?php __("Common_lblError")?>');
+        AddLangRes('Common_lblLoadMore', '<?php __("Common_lblLoadMore")?>');
+        AddLangRes('Common_lblNoCommentsAvailable', '<?php __("Common_lblNoCommentsAvailable")?>');
+        AddLangRes('Common_lblRequestInProgress', '<?php __("Common_lblRequestInProgress")?>');
+        AddLangRes('Common_lblScanToJoin', '<?php __("Common_lblScanToJoin")?>');
+        AddLangRes('Community_loginRequired', '<f:translate key="Community_loginRequired" />');
+        gn_data.Settings.CommentPageUrl = $('<textarea />').html('{f:uri.action(action:'pageComments', controller:'Api', pluginName:'Pagecomments', pageType:'{settings.ajax.pageComments}', arguments:'{ communityTag : communityTag }')}').text();
+        gn_data.Settings.CommentSaveUrl = $('<textarea />').html('{f:uri.action(action:'commentSave', controller:'Api', pluginName:'Commentsave', pageType:'{settings.ajax.commentSave}', arguments:'{ communityTag : communityTag }')}').text();
+        gn_data.Settings.LoginUrl = $('<textarea />').html('{f:uri.page(pageUid:'{settings.login.loginPid}')}').text();
+    });
+})(jQuery);
 </script>
 
 <!-- MAIN_BEG -->
