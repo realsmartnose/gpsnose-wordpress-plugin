@@ -1,0 +1,169 @@
+# Copyright (C) 2023 smart.nose
+# This file is distributed under the MIT.
+msgid ""
+msgstr ""
+"Project-Id-Version: GpsNose 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/gpsnose\n"
+"Last-Translator: \n"
+"Language-Team: German\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2023-10-09T05:38:57+00:00\n"
+"PO-Revision-Date: 2023-10-09 05:45+0000\n"
+"X-Generator: Loco https://localise.biz/\n"
+"Language: de_DE\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Loco-Version: 2.6.6; wp-6.3.1"
+
+#. Plugin Name of the plugin
+msgid "GpsNose"
+msgstr "GpsNose"
+
+#. Plugin URI of the plugin
+msgid "https://www.gpsnose.com"
+msgstr "https://www.gpsnose.com"
+
+#. Description of the plugin
+msgid ""
+"GpsNose connects anonymous people to the real world using the web and mobiles"
+msgstr ""
+"GpsNose verbindet anonyme Menschen über das Internet und Mobiltelefone mit "
+"der realen Welt"
+
+#. Author of the plugin
+msgid "smart.nose"
+msgstr "smart.nose"
+
+#. Author URI of the plugin
+msgid "https://github.com/realsmartnose"
+msgstr "https://github.com/realsmartnose"
+
+#: Admin/AdminFunction.php:94
+msgid "Settings"
+msgstr "Einstellungen"
+
+#: Admin/partials/settings.php:56 Admin/partials/settings.php:57
+msgid "Validation-Key (optional)"
+msgstr "Validation-Key (optional)"
+
+#: Admin/partials/settings.php:62 Admin/partials/settings.php:63
+msgid "App-Key"
+msgstr "App-Key"
+
+#: Admin/partials/settings.php:68 Admin/partials/settings.php:69
+msgid "Mashup-Name (e.g. %%mashup%)"
+msgstr "Mashup-Name (e.g. %%mashup%)"
+
+#: Admin/partials/settings.php:73 Admin/partials/settings.php:75
+msgid "CSS"
+msgstr "CSS"
+
+#: Admin/partials/settings.php:78
+msgid "Load Bootstrap CSS"
+msgstr "Load Bootstrap CSS"
+
+#: Admin/partials/settings.php:83
+msgid "Load GpsNose CSS"
+msgstr "Load GpsNose CSS"
+
+#: Admin/partials/settings.php:87
+msgid "JavaScript"
+msgstr "JavaScript"
+
+#: Admin/partials/settings.php:89
+msgid "jQuery"
+msgstr "jQuery"
+
+#: Admin/partials/settings.php:92
+msgid "Load jQuery"
+msgstr "Load jQuery"
+
+#: Admin/partials/settings.php:95
+msgid "GpsNose JS"
+msgstr "GpsNose JS"
+
+#: Admin/partials/settings.php:98
+msgid "Load Bootstrap JS"
+msgstr "Load Bootstrap JS"
+
+#: Admin/partials/settings.php:103
+msgid "Load GpsNose Language"
+msgstr "Load GpsNose Sprache"
+
+#: Admin/partials/settings.php:108
+msgid "Load bignumber JS"
+msgstr "Load bignumber JS"
+
+#: Admin/partials/settings.php:113
+msgid "Load moment JS"
+msgstr "Load moment JS"
+
+#: Admin/partials/settings.php:118
+msgid "Load numeral JS"
+msgstr "Load numeral JS"
+
+#: Admin/partials/settings.php:123
+msgid "Load imagesloaded JS"
+msgstr "Load imagesloaded JS"
+
+#: Admin/partials/settings.php:128
+msgid "Load masonry JS"
+msgstr "Load masonry JS"
+
+#: Admin/partials/settings.php:133
+msgid "Load knockout JS"
+msgstr "Load knockout JS"
+
+#: Admin/partials/settings.php:138
+msgid "Load maframework JS"
+msgstr "Load maframework JS"
+
+#: Admin/partials/settings.php:143
+msgid "Load gpsnose-knockout JS"
+msgstr "Load gpsnose-knockout JS"
+
+#: Admin/partials/settings.php:148
+msgid "Development"
+msgstr "Entwicklung"
+
+#: Admin/partials/settings.php:149
+msgid ""
+"Override the GpsNose URL (Only change this, if you know what you are doing!)"
+msgstr ""
+"Überschreiben Sie die GpsNose URL (Ändern Sie dies nur, wenn Sie wissen, was "
+"Sie tun!)"
+
+#: Admin/partials/settings.php:151 Admin/partials/settings.php:152
+msgid "API-URL"
+msgstr "API-URL"
+
+#: Admin/partials/settings.php:156 Admin/partials/settings.php:157
+msgid "DATA-URL"
+msgstr "DATA-URL"
+
+#: build/index.js:71 src/edit.js:43 build/index.js:43
+msgid "Display"
+msgstr "Anzeige"
+
+#: build/index.js:74 src/edit.js:46 build/index.js:46
+msgid "Members"
+msgstr "Mitglieder"
+
+#: build/index.js:77 src/edit.js:47 build/index.js:47
+msgid "Login"
+msgstr "Login"
+
+#: build/index.js:84 src/edit.js:52 build/index.js:52
+msgid "Mashup"
+msgstr "Mashup"
+
+#: build/block.json src/block.json
+msgctxt "block title"
+msgid "GpsNose"
+msgstr "GpsNose"
+
+#: build/block.json src/block.json
+msgctxt "block description"
+msgid "Add a block to show content from GpsNose."
+msgstr "Fügen Sie einen Block hinzu, um Inhalte von GpsNose anzuzeigen."

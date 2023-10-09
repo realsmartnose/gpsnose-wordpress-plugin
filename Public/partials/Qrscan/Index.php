@@ -16,14 +16,7 @@
 <script>
 (function($) {
     $(document).ready(function() {
-        AddLangRes('Common_btnJoinCommunity', '<?php __("Common_btnJoinCommunity")?>');
-        AddLangRes('Common_lblLoadMore', '<?php __("Common_lblLoadMore")?>');
-        AddLangRes('Common_lblRequestInProgress', '<?php __("Common_lblRequestInProgress")?>');
-        AddLangRes('Common_lblScanToJoin', '<?php __("Common_lblScanToJoin")?>');
-        AddLangRes('Home_Index_lblNoNews', '<?php __("Home_Index_lblNoNews")?>');
-        AddLangRes('NewsPart_Load_lblBlogWasDeleted', '<?php __("NewsPart_Load_lblBlogWasDeleted")?>');
-        AddLangRes('NewsPart_Load_lblCommentWasDeleted', '<?php __("NewsPart_Load_lblCommentWasDeleted")?>');
-        gn_data.Settings.NewsPageUrl = $('<textarea />').html('{f:uri.action(action:'pageNews', controller:'Api', pluginName:'Pagenews', pageType:'{settings.ajax.pageNews}', arguments:'{ communityTag : communityTag }')}').text();
+        gn_data.Settings.NewsPageUrl = '/gpsnose/page_news';
     });
 })(jQuery);
 </script>

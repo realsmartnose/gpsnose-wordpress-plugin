@@ -16,16 +16,8 @@
 <script>
 (function($) {
     $(document).ready(function() {
-        AddLangRes('Common_btnJoinCommunity', '<?php __("Common_btnJoinCommunity")?>');
-        AddLangRes('Common_btnLogin', '<?php __("Common_btnLogin")?>');
-        AddLangRes('Common_lblError', '<?php __("Common_lblError")?>');
-        AddLangRes('Common_lblLoadMore', '<?php __("Common_lblLoadMore")?>');
-        AddLangRes('Common_lblRequestInProgress', '<?php __("Common_lblRequestInProgress")?>');
-        AddLangRes('Common_lblScanToJoin', '<?php __("Common_lblScanToJoin")?>');
-        AddLangRes('Common_loginRequired', '<?php __("Common_loginRequired")?>');
-        AddLangRes('Nearby_lblNoTracks', '<?php __("Nearby_lblNoTracks")?>');
-        gn_data.Settings.LoginUrl = $('<textarea />').html('{f:uri.page(pageUid:'{settings.login.loginPid}')}').text();
-        gn_data.Settings.NearbyTracksPageUrl = $('<textarea />').html('{f:uri.action(action:'pageNearbyTracks', controller:'Api', pluginName:'Pagenearbytracks', pageType:'{settings.ajax.pageNearbyTracks}', arguments:'{ communityTag : communityTag }')}').text();
+        gn_data.Settings.LoginUrl = '/gpsnose/login';
+        gn_data.Settings.NearbyTracksPageUrl = '/gpsnose/page_nearby_tracks';
     });
 })(jQuery);
 </script>
