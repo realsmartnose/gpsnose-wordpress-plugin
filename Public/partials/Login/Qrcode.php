@@ -107,6 +107,5 @@ var MA_GPSNOSE_IS_MASHUP = true;
         }, 3500);
     });
 })(jQuery);
-
 </script>
 <!-- MAIN_END -->
